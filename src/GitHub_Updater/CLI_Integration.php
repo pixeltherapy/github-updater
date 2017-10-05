@@ -35,6 +35,7 @@ class CLI_Integration extends WP_CLI_Command {
 	 */
 	public function __construct() {
 		$this->base = Singleton::get_instance( 'Base' );
+		Singleton::get_instance( 'Basic_Auth_Loader' )->load_authentication_hooks();
 		$this->run();
 	}
 

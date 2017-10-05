@@ -166,6 +166,10 @@ class Basic_Auth_Loader {
 			? $repos[ $slug ]->type
 			: $type;
 
+		if ( defined( 'WP_CLI' ) && WP_CLI ) {
+			$type = 'bitbucket_install';
+		}
+
 		switch ( $type ) {
 			case ( 'bitbucket_plugin' ):
 			case ( 'bitbucket_theme' ):
